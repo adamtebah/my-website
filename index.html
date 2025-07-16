@@ -23,6 +23,17 @@
         .popup-overlay {
             background: rgba(0, 0, 0, 0.6);
         }
+        /* Style for the pricing details section transition */
+        #price-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.7s ease-in-out, opacity 0.5s ease-in-out;
+            opacity: 0;
+        }
+        #price-details.show {
+            max-height: 500px; /* Adjust as needed to fit content */
+            opacity: 1;
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -58,34 +69,86 @@
         <section id="services" class="py-20">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h3 class="text-3xl lg:text-4xl font-bold">무엇을 도와드릴까요?</h3>
-                    <p class="text-gray-600 mt-2">PM의 핵심 역량을 활용하여 학습의 모든 과정을 함께합니다.</p>
+                    <h3 class="text-3xl lg:text-4xl font-bold">
+                        아이의 학습 습관의 변화로,<br>학부모와 학생의 고민을 해결해 드립니다!!
+                    </h3>
                 </div>
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Service Card 1 -->
+
+                <div class="max-w-4xl mx-auto space-y-8">
+                    <!-- 고민 1 -->
                     <div class="bg-white p-8 rounded-xl shadow-lg fade-in-up">
-                        <div class="text-3xl font-bold text-indigo-600 mb-4">01</div>
-                        <h4 class="text-xl font-bold mb-2">문제 정의 (Problem Definition)</h4>
-                        <p class="text-gray-600">학습 목표가 불분명하고, 어떤 것부터 시작해야 할지 막막한 상태를 명확한 '문제'로 정의하여 해결의 첫 단추를 꿰어 드립니다.</p>
+                        <h4 class="text-xl font-bold mb-4 text-indigo-700">고민 1! 학원은 많이 다니지만 체계적인 관리가 안 되는 것 같아요...</h4>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start"><svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>PM 전문가의 체계적인 학습 관리로 시간과 노력이 더 이상 낭비되지 않습니다.</span></li>
+                            <li class="flex items-start"><svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>모든 학습 활동이 명확한 목표와 계획 하에 진행됩니다.</span></li>
+                            <li class="flex items-start"><svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>학원, 과외, 자습 등 모든 학습 활동이 유기적으로 연결됩니다.</span></li>
+                        </ul>
                     </div>
-                    <!-- Service Card 2 -->
+                     <!-- 고민 2 ~ 5 -->
                     <div class="bg-white p-8 rounded-xl shadow-lg fade-in-up">
-                        <div class="text-3xl font-bold text-indigo-600 mb-4">02</div>
-                        <h4 class="text-xl font-bold mb-2">전략 수립 (Strategy)</h4>
-                        <p class="text-gray-600">정의된 문제를 해결하기 위한 최적의 학습 로드맵과 실행 계획을 수립합니다. 한정된 시간과 에너지를 가장 효율적으로 사용할 수 있도록 돕습니다.</p>
+                        <h4 class="text-xl font-bold mb-4 text-indigo-700">고민 2. 📈 "열심히 공부하는데 성적이 오르지 않아요"</h4>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start"><svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>검증된 학습법으로 공부 효율이 높아집니다.</span></li>
+                            <li class="flex items-start"><svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>20년 이상의 프로젝트 관리 경험을 통해 입증된 방법론을 적용합니다.</span></li>
+                            <li class="flex items-start"><svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>과목별로 최적화된 학습 전략으로 성적 향상을 이끌어냅니다.</span></li>
+                        </ul>
                     </div>
-                    <!-- Service Card 3 -->
                     <div class="bg-white p-8 rounded-xl shadow-lg fade-in-up">
-                        <div class="text-3xl font-bold text-indigo-600 mb-4">03</div>
-                        <h4 class="text-xl font-bold mb-2">실행 및 관리 (Execution)</h4>
-                        <p class="text-gray-600">주기적인 진척도 관리(스프린트), 회고를 통해 계획이 제대로 실행되는지 추적하고, 예상치 못한 변수에 유연하게 대응하며 목표 달성까지 함께합니다.</p>
+                        <h4 class="text-xl font-bold mb-4 text-indigo-700">고민 3. ⏰ "공부 시간은 많은데 효율성이 떨어지는 것 같아요"</h4>
+                        <ul class="space-y-3 text-gray-600">
+                           <li class="flex items-start"><svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>정기적인 성과 측정과 피드백으로 학습 효율이 지속적으로 개선됩니다.</span></li>
+                            <li class="flex items-start"><svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>데이터에 기반한 학습 방법 개선으로 불필요한 시간 낭비를 줄입니다.</span></li>
+                            <li class="flex items-start"><svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>학습 시간의 질적 향상을 통해 더 적은 시간으로 더 큰 성과를 얻을 수 있습니다.</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg fade-in-up">
+                        <h4 class="text-xl font-bold mb-4 text-indigo-700">고민 4. 🌱 "스스로 공부하는 습관을 키워주고 싶어요"</h4>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start"><svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>명확한 목표와 달성 가능한 계획으로 학습 동기가 강화됩니다.</span></li>
+                            <li class="flex items-start"><svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>성취감을 통해 자기 주도 학습 능력이 자연스럽게 향상됩니다.</span></li>
+                            <li class="flex items-start"><svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>학습에 대한 자신감과 책임감이 함께 성장합니다.</span></li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg fade-in-up">
+                        <h4 class="text-xl font-bold mb-4 text-indigo-700">고민 5. 📋 "장기적인 학습 전략이 필요한데 어떻게 해야 할지 모르겠어요"</h4>
+                        <ul class="space-y-3 text-gray-600">
+                            <li class="flex items-start"><svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>현재 상황에 대한 정확한 진단을 바탕으로 장기 로드맵을 제시합니다.</span></li>
+                            <li class="flex items-start"><svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>학년별, 과목별 특성을 고려한 맞춤형 학습 전략을 수립합니다.</span></li>
+                            <li class="flex items-start"><svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>정기적인 점검과 조정으로 목표 달성까지 함께 합니다.</span></li>
+                        </ul>
                     </div>
                 </div>
-                <!-- Single Details Button -->
-                <div class="text-center mt-12">
-                    <a href="https://water-ursinia-471.notion.site/PM-1af737c65bea801d87d0e1de905fab3e?source=copy_link" target="_blank" rel="noopener noreferrer" class="inline-block bg-indigo-600 text-white font-bold py-3 px-8 rounded-full hover:bg-indigo-700 transition duration-300 text-lg">
-                        PM 기반 학습 컨설팅 서비스 자세히 보기
-                    </a>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <button id="price-toggle-button" class="bg-indigo-600 text-white font-bold py-3 px-8 rounded-full hover:bg-indigo-700 transition duration-300 text-lg">
+                    💰 서비스 가격 보기
+                </button>
+                <div id="price-details" class="mt-8 max-w-2xl mx-auto text-left">
+                    <div class="bg-gray-50 p-8 rounded-xl border border-gray-200">
+                        <h4 class="text-2xl font-bold mb-6 text-center text-gray-800">💰 서비스 가격</h4>
+                        <div class="space-y-4">
+                            <div>
+                                <h5 class="font-bold text-lg text-gray-700">초기 상담 및 진단</h5>
+                                <p class="text-gray-600">5만원 (1시간)</p>
+                                <p class="text-sm text-blue-600 font-semibold">[상담을 마치면 컨설팅 진행 여부와 상관없이 돌려 드립니다.]</p>
+                            </div>
+                            <hr>
+                            <div>
+                                <h5 class="font-bold text-lg text-gray-700">월간 정기 컨설팅</h5>
+                                <p class="text-gray-600">20만원 (1시간/주, 4회)</p>
+                            </div>
+                            <hr>
+                             <div>
+                                <h5 class="font-bold text-lg text-gray-700">특별 프로그램</h5>
+                                <p class="text-gray-600">평일 5일 1 ~ 2시간, 토요일 3시간</p>
+                            </div>
+                        </div>
+                        <p class="mt-6 text-center text-sm text-gray-500">※ 구체적인 서비스 내용과 가격은 초기 상담 후 개별적으로 안내해 드립니다.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -144,7 +207,7 @@
         // Fade in on scroll
         const faders = document.querySelectorAll('.fade-in-up');
         const appearOptions = {
-            threshold: 0.2,
+            threshold: 0.1,
             rootMargin: "0px 0px -50px 0px"
         };
         const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
@@ -179,6 +242,19 @@
 
         // Close popup when clicking outside of it
         popup.querySelector('.popup-overlay').addEventListener('click', closePopup);
+
+        // Pricing Toggle
+        const priceToggleButton = document.getElementById('price-toggle-button');
+        const priceDetails = document.getElementById('price-details');
+
+        priceToggleButton.addEventListener('click', () => {
+            const isShown = priceDetails.classList.toggle('show');
+            if (isShown) {
+                priceToggleButton.textContent = '💰 서비스 가격 숨기기';
+            } else {
+                priceToggleButton.textContent = '💰 서비스 가격 보기';
+            }
+        });
 
     </script>
 
